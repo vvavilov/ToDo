@@ -9,7 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Resources" />
     <Folder Include="specs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDo.Core\ToDo.Core.csproj" />
   </ItemGroup>
 
 
