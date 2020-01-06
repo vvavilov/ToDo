@@ -24,9 +24,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69b599f3-fb9f-44a0-8fb6-965487fe4317" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDo.WebApi/specs/nswag.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDo.WebApi/specs/nswag.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDo.WebApi/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -113,34 +114,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/ToDoWebApiClient.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/nswag.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ToDo.Core/ViewModels/ToDoListVm.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-              <folding>
-                <marker date="1578318796382" expanded="true" signature="30:116" ph="{...}" />
-                <marker date="1578318796382" expanded="true" signature="60:114" ph="{...}" />
-              </folding>
+            <state relative-caret-position="224">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -168,8 +145,8 @@
         <option value="$PROJECT_DIR$/src/ToDo.WebApi/Startup.cs" />
         <option value="$PROJECT_DIR$/src/ToDo.WebApi/Controllers/WeatherForecastController.cs" />
         <option value="$PROJECT_DIR$/src/ToDo.WebApi/Controllers/TodoListController.cs" />
-        <option value="$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj" />
         <option value="$PROJECT_DIR$/src/ToDo.WebApi/specs/nswag.json" />
+        <option value="$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj" />
       </list>
     </option>
   </component>
@@ -315,12 +292,12 @@
       <updated>1578316814103</updated>
       <workItem from="1578316815361" duration="678000" />
       <workItem from="1578318138243" duration="57000" />
-      <workItem from="1578318252427" duration="12151000" />
+      <workItem from="1578318252427" duration="14171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12886000" />
+    <option name="totallyTimeSpent" value="14906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,6 +445,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/TypescriptApiClientOutput.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/appsettings.Development.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/ToDoWebApiClient.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/WeatherForecast.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -475,18 +476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/Controllers/TodoListController.cs">
+    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/nswag.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-          <folding>
-            <marker date="1578330970069" expanded="true" signature="6:175" ph="..." />
-            <marker date="1578330970069" expanded="true" signature="210:1092" ph="{...}" />
-            <marker date="1578330970069" expanded="true" signature="313:1090" ph="{...}" />
-            <marker date="1578330970069" expanded="true" signature="408:585" ph="{...}" />
-            <marker date="1578330970069" expanded="true" signature="693:793" ph="{...}" />
-            <marker date="1578330970069" expanded="true" signature="921:1084" ph="{...}" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -507,32 +500,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/appsettings.Development.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/appsettings.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/ToDoWebApiClient.ts">
+    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/Controllers/TodoListController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="272">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1578330970069" expanded="true" signature="6:175" ph="..." />
+            <marker date="1578330970069" expanded="true" signature="210:1092" ph="{...}" />
+            <marker date="1578330970069" expanded="true" signature="313:1090" ph="{...}" />
+            <marker date="1578330970069" expanded="true" signature="408:585" ph="{...}" />
+            <marker date="1578330970069" expanded="true" signature="693:793" ph="{...}" />
+            <marker date="1578330970069" expanded="true" signature="921:1084" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/specs/nswag.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+        <state relative-caret-position="345">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>

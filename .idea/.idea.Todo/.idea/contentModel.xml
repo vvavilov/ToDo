@@ -53,11 +53,9 @@
           <e p="Resources" t="Include" />
           <e p="specs" t="Include">
             <e p="nswag.json" t="Include" />
-            <e p="ToDoWebApiClient.ts" t="Include" />
           </e>
           <e p="Startup.cs" t="Include" />
           <e p="ToDo.WebApi.csproj" t="IncludeRecursive" />
-          <e p="WeatherForecast.cs" t="Include" />
         </e>
       </e>
       <e p="Todo.sln" t="IncludeFlat" />
