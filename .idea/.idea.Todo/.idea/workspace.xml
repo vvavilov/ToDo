@@ -24,10 +24,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69b599f3-fb9f-44a0-8fb6-965487fe4317" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Todo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/generated/client-api/WebApiClient.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/to-do/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateClient.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/generateClient.ps1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDo.WebApi/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -292,12 +308,12 @@
       <updated>1578316814103</updated>
       <workItem from="1578316815361" duration="678000" />
       <workItem from="1578318138243" duration="57000" />
-      <workItem from="1578318252427" duration="14171000" />
+      <workItem from="1578318252427" duration="14611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14906000" />
+    <option name="totallyTimeSpent" value="15346000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -517,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ToDo.WebApi/ToDo.WebApi.csproj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
