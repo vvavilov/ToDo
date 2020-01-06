@@ -2,6 +2,64 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\My\Projects\Todo" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="src" t="Include">
+        <e p="ToDo.Core" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.0" t="Include">
+                <e p="ToDo.Core.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="ToDo.Core.csproj" t="IncludeRecursive" />
+          <e p="ViewModels" t="Include">
+            <e p="ToDoListVm.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ToDo.Domain" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Entities" t="Include">
+            <e p="ToDoList.cs" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.0" t="Include">
+                <e p="ToDo.Domain.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="ToDo.Domain.csproj" t="IncludeRecursive" />
+        </e>
+        <e p="ToDo.WebApi" t="IncludeRecursive">
+          <e p="appsettings.Development.json" t="Include" />
+          <e p="appsettings.json" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Controllers" t="Include">
+            <e p="TodoListController.cs" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp3.1" t="Include">
+                <e p="ToDo.WebApi.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="launchSettings.json" t="Include" />
+          </e>
+          <e p="Resources" t="Include" />
+          <e p="specs" t="Include">
+            <e p="nswag.json" t="Include" />
+            <e p="ToDoWebApiClient.ts" t="Include" />
+          </e>
+          <e p="Startup.cs" t="Include" />
+          <e p="ToDo.WebApi.csproj" t="IncludeRecursive" />
+          <e p="WeatherForecast.cs" t="Include" />
+        </e>
+      </e>
       <e p="Todo.sln" t="IncludeFlat" />
     </e>
     <e p="C:\Users\V.Vavilov\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
