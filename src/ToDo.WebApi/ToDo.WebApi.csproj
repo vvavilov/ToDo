@@ -4,6 +4,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <TypescriptApiClientOutput>../../../Frontend/to-do/src/generated/client-api/WebApiClient.ts</TypescriptApiClientOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +24,7 @@
   </ItemGroup>
 
   <Target Name="NSwag" AfterTargets="Build">
-  <Exec Command="$(NSwagExe_Core31) run specs/nswag.json /variables:Configuration=$(Configuration)" />
+  <Exec Command="$(NSwagExe_Core31) run specs/nswag.json /variables:Output=$(TypescriptApiClientOutput),Configuration=$(Configuration)" />
   </Target>
 
 </Project>

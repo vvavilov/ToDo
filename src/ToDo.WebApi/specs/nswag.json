@@ -47,7 +47,7 @@
       "output": null,
       "outputType": "OpenApi3",
       "assemblyPaths": [
-        "../bin/Debug/netcoreapp3.1/ToDo.WebApi.dll"
+        "../bin/$(Configuration)/netcoreapp3.1/ToDo.WebApi.dll"
       ],
       "assemblyConfig": null,
       "referencePaths": [],
@@ -110,7 +110,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "ToDoWebApiClient.ts"
+      "output": "$(Output)"
     }
   }
 }
