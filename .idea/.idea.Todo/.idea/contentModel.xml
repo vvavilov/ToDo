@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\My\Projects\Todo" t="IncludeFlat">
+      <e p="Todo.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\V.Vavilov\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\V.Vavilov\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\V.Vavilov\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\V.Vavilov\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Todo.-298912545.00" t="ExcludeRecursive" />
+  </component>
+</project>
