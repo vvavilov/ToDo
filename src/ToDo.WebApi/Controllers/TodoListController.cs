@@ -14,7 +14,8 @@ namespace ToDo.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ToDoListVm>>> Get()
         {
-            return Ok(await Task.FromResult(Enumerable.Empty<ToDoListVm>()));
+            var result = Enumerable.Range(1, 10).Select(id => new ToDoListVm {Title = $"Hello {id}"});
+            return Ok(await Task.FromResult(result));
         }
 
         [HttpGet]
