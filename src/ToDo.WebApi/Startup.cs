@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ToDo.Core;
+using ToDo.Infrastructure;
 
 namespace ToDo.WebApi
 {
@@ -32,8 +33,11 @@ namespace ToDo.WebApi
                 builder.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
             services.AddCore();
+            services.AddInfrastructure();
             services.AddOpenApiDocument();
             services.AddCors();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

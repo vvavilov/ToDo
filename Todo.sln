@@ -1,22 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{20CF0224-8A78-4B91-BED2-D4D0B676743F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Domain", "src\ToDo.Domain\ToDo.Domain.csproj", "{43120A43-6662-413C-AFD0-887567AA0180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Domain", "src\ToDo.Domain\ToDo.Domain.csproj", "{43120A43-6662-413C-AFD0-887567AA0180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Core", "src\ToDo.Core\ToDo.Core.csproj", "{650F4A3B-DB2A-4F11-B35E-8747FFFF54E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Core", "src\ToDo.Core\ToDo.Core.csproj", "{650F4A3B-DB2A-4F11-B35E-8747FFFF54E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.WebApi", "src\ToDo.WebApi\ToDo.WebApi.csproj", "{F2765580-C8A6-4214-B414-46F3E1E26983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.WebApi", "src\ToDo.WebApi\ToDo.WebApi.csproj", "{F2765580-C8A6-4214-B414-46F3E1E26983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Infrastructure", "src\ToDo.Infrastructure\ToDo.Infrastructure.csproj", "{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{43120A43-6662-413C-AFD0-887567AA0180} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
-		{650F4A3B-DB2A-4F11-B35E-8747FFFF54E1} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
-		{F2765580-C8A6-4214-B414-46F3E1E26983} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{43120A43-6662-413C-AFD0-887567AA0180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -31,5 +31,21 @@ Global
 		{F2765580-C8A6-4214-B414-46F3E1E26983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2765580-C8A6-4214-B414-46F3E1E26983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2765580-C8A6-4214-B414-46F3E1E26983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43120A43-6662-413C-AFD0-887567AA0180} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
+		{650F4A3B-DB2A-4F11-B35E-8747FFFF54E1} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
+		{F2765580-C8A6-4214-B414-46F3E1E26983} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
+		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92685841-E724-4E4E-AD36-C0E14F382FF1}
 	EndGlobalSection
 EndGlobal

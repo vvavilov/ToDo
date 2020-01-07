@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ToDo.Core.ToDo.Commands;
 using ToDo.Core.ToDo.Queries;
 using ToDo.Core.ViewModels;
 
@@ -38,8 +39,8 @@ namespace ToDo.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Add()
         {
-            await Task.CompletedTask;
-            return CreatedAtAction(nameof(Get), new { id = 123 }, new ToDoListVm { Title = "Created" });
+            var addedEntity = await _mediatr.Send(new AddToDoList { Title = "New List" });
+            return CreatedAtAction(nameof(Get), new { id = addedEntity.Id }, addedEntity);
         }
     }
 }
