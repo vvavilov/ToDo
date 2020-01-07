@@ -118,7 +118,7 @@ export class TodoListClient {
 }
 
 export interface ToDoListVm {
-    Title?: string | undefined;
+    title?: string | undefined;
 }
 
 export class ApiException extends Error {
