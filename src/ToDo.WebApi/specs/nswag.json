@@ -1,6 +1,6 @@
 ﻿{
   "runtime": "NetCore31",
-  "defaultVariables": null,
+  "defaultVariables": "Configuration=Debug,Output=1.ts",
   "documentGenerator": {
     "webApiToOpenApi": {
       "controllerNames": [
@@ -11,7 +11,7 @@
       "defaultUrlTemplate": "api/{controller}/{id?}",
       "addMissingPathParameters": false,
       "includedVersions": null,
-      "defaultPropertyNameHandling": "Default",
+      "defaultPropertyNameHandling": "SnakeCase",
       "defaultReferenceTypeNullHandling": "Null",
       "defaultDictionaryValueReferenceTypeNullHandling": "NotNull",
       "defaultResponseReferenceTypeNullHandling": "NotNull",

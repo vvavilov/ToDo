@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ToDo.Core.ToDo.Queries;
 using ToDo.Core.ViewModels;
 
 namespace ToDo.WebApi.Controllers
@@ -11,11 +13,18 @@ namespace ToDo.WebApi.Controllers
     [Route("[controller]")]
     public class TodoListController : ControllerBase
     {
+        private readonly IMediator _mediatr;
+
+        public TodoListController(IMediator mediatr)
+        {
+            _mediatr = mediatr;
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ToDoListVm>>> Get()
         {
-            var result = Enumerable.Range(1, 10).Select(id => new ToDoListVm {Title = $"Hello {id}"});
-            return Ok(await Task.FromResult(result));
+            var lists = await _mediatr.Send(new GetToDoLists());
+            return Ok(lists);
         }
 
         [HttpGet]

@@ -8,4 +8,13 @@
     <ProjectReference Include="..\ToDo.Domain\ToDo.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mediatr" Version="8.0.0" />
+    <PackageReference Include="Mediatr.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ToDo\Commands" />
+  </ItemGroup>
+
 </Project>
