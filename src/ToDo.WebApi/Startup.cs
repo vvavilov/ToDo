@@ -33,7 +33,7 @@ namespace ToDo.WebApi
                 builder.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
             services.AddCore();
-            services.AddInfrastructure();
+            services.AddInfrastructure(Configuration);
             services.AddOpenApiDocument();
             services.AddCors();
 
