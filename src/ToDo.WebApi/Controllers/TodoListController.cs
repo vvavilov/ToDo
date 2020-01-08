@@ -23,7 +23,7 @@ namespace ToDo.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ToDoListVm>>> Get()
+        public async Task<ActionResult<IEnumerable<ToDoListVm>>> GetAll()
         {
             var lists = await _mediatr.Send(new GetToDoLists());
             return Ok(lists);
@@ -31,7 +31,7 @@ namespace ToDo.WebApi.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<ToDoListVm>> Get(Guid id)
+        public async Task<ActionResult<ToDoListVm>> GetById(Guid id)
         {
             var item = await _mediatr.Send(new GetToDoListById
             {
@@ -51,7 +51,7 @@ namespace ToDo.WebApi.Controllers
         public async Task<IActionResult> Add()
         {
             var addedEntity = await _mediatr.Send(new AddToDoList { Title = "New List" });
-            return CreatedAtAction(nameof(Get), new { id = addedEntity.Id }, addedEntity);
+            return CreatedAtAction(nameof(GetById), new { id = addedEntity.Id }, addedEntity);
         }
     }
 }

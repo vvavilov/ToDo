@@ -12,7 +12,11 @@ namespace ToDo.Infrastructure.Database
 {
     public class TodoDbContext : DbContext, IDbContext
     {
-        public TodoDbContext(DbContextOptions options) : base(options) { }
+        private readonly ICurrentUser _user;
+
+        public TodoDbContext(DbContextOptions options, ICurrentUser user) : base(options) {
+            _user = user;
+        }
 
         public DbSet<ToDoList> ToDoLists { get; set; }
 
@@ -27,13 +31,13 @@ namespace ToDo.Infrastructure.Database
                     if (entry.State == EntityState.Added)
                     {
                         auditableEntity.Created = DateTimeOffset.Now;
-                        auditableEntity.CreatedBy = "Creation Admin";
+                        auditableEntity.CreatedBy = _user.Email;
                     }
 
                     if(entry.State == EntityState.Modified)
                     {
                         auditableEntity.LastUpdated = DateTimeOffset.Now;
-                        auditableEntity.LastUpdatedBy = "Updating Admin";
+                        auditableEntity.LastUpdatedBy = _user.Email;
                     }
                 }
             }
