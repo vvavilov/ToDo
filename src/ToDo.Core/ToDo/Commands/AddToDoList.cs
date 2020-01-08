@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,14 @@ namespace ToDo.Core.ToDo.Commands
         public string Title { get; set; }
     }
 
+    public class AddToDoListValidator : AbstractValidator<AddToDoList>
+    {
+        public AddToDoListValidator()
+        {
+            RuleFor(x => x.Title).NotEmpty();
+        }
+    }
+
     internal class AddToDoListHandler : IRequestHandler<AddToDoList, ToDoListVm>
     {
         private readonly IDbContext _dbContext;
@@ -29,6 +38,8 @@ namespace ToDo.Core.ToDo.Commands
 
         public async Task<ToDoListVm> Handle(AddToDoList request, CancellationToken cancellationToken)
         {
+            new AddToDoListValidator().ValidateAndThrow(request);
+
             var listToAdd = new ToDoList
             {
                 Title = request.Title
