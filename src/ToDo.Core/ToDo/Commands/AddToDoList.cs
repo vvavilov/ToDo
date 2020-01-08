@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,10 +19,12 @@ namespace ToDo.Core.ToDo.Commands
     internal class AddToDoListHandler : IRequestHandler<AddToDoList, ToDoListVm>
     {
         private readonly IDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public AddToDoListHandler(IDbContext dbContext)
+        public AddToDoListHandler(IDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public async Task<ToDoListVm> Handle(AddToDoList request, CancellationToken cancellationToken)
@@ -32,13 +35,8 @@ namespace ToDo.Core.ToDo.Commands
             };
 
             _dbContext.ToDoLists.Add(listToAdd);
-
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return new ToDoListVm
-            {
-                Id = listToAdd.Id,
-                Title = listToAdd.Title
-            };
+            return _mapper.Map<ToDoListVm>(listToAdd);
         }
     }
 }

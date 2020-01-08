@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,9 +31,19 @@ namespace ToDo.WebApi.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<ToDoListVm>> Get(long id)
+        public async Task<ActionResult<ToDoListVm>> Get(Guid id)
         {
-            return Ok(await Task.FromResult(new ToDoListVm {Title = "Hello"}));
+            var item = await _mediatr.Send(new GetToDoListById
+            {
+                Id = id
+            });
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(item);
         }
 
         [HttpPost]

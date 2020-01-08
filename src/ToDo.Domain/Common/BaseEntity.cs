@@ -14,6 +14,6 @@ namespace ToDo.Domain.Common
 
         public DateTimeOffset Created { get; set; }
 
-        public DateTimeOffset LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; set; }
     }
 }

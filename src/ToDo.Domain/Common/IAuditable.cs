@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ToDo.Domain.Common
 {
@@ -12,6 +10,6 @@ namespace ToDo.Domain.Common
 
         DateTimeOffset Created { get; set; }
 
-        DateTimeOffset LastUpdated { get; set; }
+        DateTimeOffset? LastUpdated { get; set; }
     }
 }
