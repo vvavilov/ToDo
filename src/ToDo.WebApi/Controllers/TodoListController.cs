@@ -50,6 +50,7 @@ namespace ToDo.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Add(string title)
         {
+            var guid = Guid.NewGuid();
             var addedEntity = await _mediatr.Send(new AddToDoList { Title = title });
             return CreatedAtAction(nameof(GetById), new { id = addedEntity.Id }, addedEntity);
         }
