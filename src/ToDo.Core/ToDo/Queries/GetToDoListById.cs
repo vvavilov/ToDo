@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ namespace ToDo.Core.ToDo.Queries
     public class GetToDoListById : IRequest<ToDoListVm>
     {
         public Guid Id { get; set; }
+    }
+
+    public class GetToDoListByIdValidator : AbstractValidator<GetToDoListById>
+    {
+        public GetToDoListByIdValidator()
+        {
+            RuleFor(x => x.Id).NotEmpty();
+        }
     }
 
     internal class GetToDoListByIdHandler : IRequestHandler<GetToDoListById, ToDoListVm>

@@ -47,12 +47,20 @@ namespace ToDo.WebApi.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Add(string title)
+        [ProducesResponseType(typeof(ToDoListVm), StatusCodes.Status201Created)]
+        public async Task<ActionResult<ToDoListVm>> Add(string title)
         {
-            var guid = Guid.NewGuid();
             var addedEntity = await _mediatr.Send(new AddToDoList { Title = title });
             return CreatedAtAction(nameof(GetById), new { id = addedEntity.Id }, addedEntity);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _mediatr.Send(new DeleteToDoList { Id = id });
+            return Ok();
         }
     }
 }

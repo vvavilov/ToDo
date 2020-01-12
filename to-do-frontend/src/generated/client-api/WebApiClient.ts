@@ -50,7 +50,7 @@ export class TodoListClient {
         return Promise.resolve<ToDoListVm[] | null>(<any>null);
     }
 
-    add(title: string | null): Promise<void> {
+    add(title: string | null): Promise<ToDoListVm> {
         let url_ = this.baseUrl + "/TodoList?";
         if (title === undefined)
             throw new Error("The parameter 'title' must be defined.");
@@ -61,6 +61,7 @@ export class TodoListClient {
         let options_ = <RequestInit>{
             method: "POST",
             headers: {
+                "Accept": "application/json"
             }
         };
 
@@ -69,19 +70,21 @@ export class TodoListClient {
         });
     }
 
-    protected processAdd(response: Response): Promise<void> {
+    protected processAdd(response: Response): Promise<ToDoListVm> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 201) {
             return response.text().then((_responseText) => {
-            return;
+            let result201: any = null;
+            result201 = _responseText === "" ? null : <ToDoListVm>JSON.parse(_responseText, this.jsonParseReviver);
+            return result201;
             });
         } else if (status !== 200 && status !== 204) {
             return response.text().then((_responseText) => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             });
         }
-        return Promise.resolve<void>(<any>null);
+        return Promise.resolve<ToDoListVm>(<any>null);
     }
 
     getById(id: string): Promise<ToDoListVm | null> {
