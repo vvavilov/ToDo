@@ -29,16 +29,18 @@ namespace ToDo.Core.ToDo.Commands
     {
         private readonly IDbContext _dbContext;
         private readonly IMapper _mapper;
+        private readonly IValidator<AddToDoList> _validator;
 
-        public AddToDoListHandler(IDbContext dbContext, IMapper mapper)
+        public AddToDoListHandler(IDbContext dbContext, IMapper mapper, IValidator<AddToDoList> validator)
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _validator = validator;
         }
 
         public async Task<ToDoListVm> Handle(AddToDoList request, CancellationToken cancellationToken)
         {
-            new AddToDoListValidator().ValidateAndThrow(request);
+            _validator.ValidateAndThrow(request);
 
             var listToAdd = new ToDoList
             {
