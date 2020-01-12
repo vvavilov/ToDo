@@ -50,8 +50,12 @@ export class TodoListClient {
         return Promise.resolve<ToDoListVm[] | null>(<any>null);
     }
 
-    add(): Promise<void> {
-        let url_ = this.baseUrl + "/TodoList";
+    add(title: string | null): Promise<void> {
+        let url_ = this.baseUrl + "/TodoList?";
+        if (title === undefined)
+            throw new Error("The parameter 'title' must be defined.");
+        else
+            url_ += "title=" + encodeURIComponent("" + title) + "&"; 
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ = <RequestInit>{
@@ -80,7 +84,7 @@ export class TodoListClient {
         return Promise.resolve<void>(<any>null);
     }
 
-    get(id: number): Promise<ToDoListVm | null> {
+    getById(id: string): Promise<ToDoListVm | null> {
         let url_ = this.baseUrl + "/TodoList/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -95,11 +99,11 @@ export class TodoListClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processGet(_response);
+            return this.processGetById(_response);
         });
     }
 
-    protected processGet(response: Response): Promise<ToDoListVm | null> {
+    protected processGetById(response: Response): Promise<ToDoListVm | null> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -118,6 +122,7 @@ export class TodoListClient {
 }
 
 export interface ToDoListVm {
+    id?: string;
     title?: string | undefined;
 }
 
