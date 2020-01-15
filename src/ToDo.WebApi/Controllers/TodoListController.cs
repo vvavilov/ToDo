@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.Core.ToDo.Commands;
 using ToDo.Core.ToDo.Queries;
@@ -52,6 +53,19 @@ namespace ToDo.WebApi.Controllers
         {
             var addedEntity = await _mediatr.Send(new AddToDoList { Title = title });
             return CreatedAtAction(nameof(GetById), new { id = addedEntity.Id }, addedEntity);
+        }
+
+        [HttpPatch]
+        [Route("{id}")]
+        public async Task<ActionResult<ToDoListVm>> Update(Guid id, ToDoListVm item)
+        {
+            var updatedItem = await _mediatr.Send(new UpdateToDoList
+            {
+                Id = id,
+                Title = item.Title
+            });
+
+            return Ok(updatedItem);
         }
 
         [HttpDelete]

@@ -34,7 +34,7 @@ export const ToDo = () => {
 
     const classes = useStyles();
     const [toDoLists, setToDoLists] = useState<ToDoListVm[]>([]);
-    const [newListTitle, setNewListTitle] = useState<string | null>(null);
+    const [newListTitle, setNewListTitle] = useState<string>('');
     
     useEffect(() => {        
         fetchToDoLists();
