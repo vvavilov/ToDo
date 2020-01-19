@@ -14,7 +14,7 @@ namespace ToDo.Core.ToDo.Commands
 {
     public class AddToDoList : IRequest<ToDoListVm>
     {
-        public string Title { get; set; }
+        public string Title { get; set; } = "";
     }
 
     public class AddToDoListValidator : AbstractValidator<AddToDoList>

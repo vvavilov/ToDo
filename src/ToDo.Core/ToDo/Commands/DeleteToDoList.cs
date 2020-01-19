@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ToDo.Core.Common.Extensions;
 using ToDo.Core.Common.Interfaces;
 
 namespace ToDo.Core.ToDo.Commands
@@ -33,7 +34,7 @@ namespace ToDo.Core.ToDo.Commands
 
         protected override async Task Handle(DeleteToDoList request, CancellationToken cancellationToken)
         {
-            var entityToDelete = _dbContext.ToDoLists.Find(request.Id);
+            var entityToDelete = await _dbContext.ToDoLists.FindAsyncOrThrow(request.Id);
             _dbContext.ToDoLists.Remove(entityToDelete);
             await _dbContext.SaveChangesAsync(cancellationToken);
         }

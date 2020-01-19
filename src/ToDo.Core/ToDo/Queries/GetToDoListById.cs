@@ -6,8 +6,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ToDo.Core.Common.Extensions;
 using ToDo.Core.Common.Interfaces;
 using ToDo.Core.ViewModels;
+using ToDo.Domain.Exceptions;
+using ToDo.Domain.ToDo.Entities;
 
 namespace ToDo.Core.ToDo.Queries
 {
@@ -37,7 +40,7 @@ namespace ToDo.Core.ToDo.Queries
 
         public async Task<ToDoListVm> Handle(GetToDoListById request, CancellationToken cancellationToken)
         {
-            var item = await _dbContext.ToDoLists.FindAsync(request.Id);
+            var item = await _dbContext.ToDoLists.FindAsyncOrThrow(request.Id);
             return _mapper.Map<ToDoListVm>(item);
         }
     }

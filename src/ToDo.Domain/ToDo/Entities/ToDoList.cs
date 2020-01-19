@@ -7,6 +7,6 @@ namespace ToDo.Domain.ToDo.Entities
 {
     public class ToDoList : BaseEntity
     {
-        public string Title { get; set; } 
+        public string Title { get; set; } = "";
     }
 }

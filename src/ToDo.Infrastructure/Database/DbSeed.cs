@@ -12,7 +12,13 @@ namespace ToDo.Infrastructure.Database
         DbContext _dbContext;
         public DbSeed(IDbContext dbContext)
         {
-            _dbContext = dbContext as DbContext;
+            DbContext? efCoreDbContext = dbContext as DbContext;
+
+            if (efCoreDbContext == null)
+            {
+                throw new Exception("DbSeed supports only EfCore.DbContext");
+            }
+            _dbContext = efCoreDbContext;
         }
 
         public async Task Seed()

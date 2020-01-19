@@ -14,11 +14,12 @@ namespace ToDo.Infrastructure.Database
     {
         private readonly ICurrentUser _user;
 
-        public TodoDbContext(DbContextOptions options, ICurrentUser user) : base(options) {
+        public TodoDbContext(DbContextOptions options, ICurrentUser user) : base(options)
+        {
             _user = user;
         }
 
-        public DbSet<ToDoList> ToDoLists { get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; } = null!;
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
@@ -26,7 +27,7 @@ namespace ToDo.Infrastructure.Database
             {
                 var auditableEntity = entry.Entity as IAuditable;
 
-                if(auditableEntity != null)
+                if (auditableEntity != null)
                 {
                     if (entry.State == EntityState.Added)
                     {
@@ -34,7 +35,7 @@ namespace ToDo.Infrastructure.Database
                         auditableEntity.CreatedBy = _user.Email;
                     }
 
-                    if(entry.State == EntityState.Modified)
+                    if (entry.State == EntityState.Modified)
                     {
                         auditableEntity.LastUpdated = DateTimeOffset.Now;
                         auditableEntity.LastUpdatedBy = _user.Email;

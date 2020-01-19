@@ -14,14 +14,14 @@ namespace ToDo.Core.Common.Behaviors
         {
             // Use service locator to avoid DI validation. It is required for the case when no validator is provided for the request.
             // As an alternative: Disable validation in host building.
-            // TODO: Decide if it is a valida case, or it is better to define validator for any request.
+            // TODO: Decide if it is a valid case, or it is better to define validator for any request.
             _validator = serviceProvider.GetService(typeof(IValidator<TRequest>)) as IValidator<TRequest>;
         }
 
 
         public async Task Process(TRequest request, CancellationToken cancellationToken)
         {
-            if(_validator != null)
+            if (_validator != null)
             {
                 await _validator.ValidateAndThrowAsync(request);
             }

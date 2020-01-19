@@ -4,9 +4,9 @@ namespace ToDo.Domain.Common
 {
     public interface IAuditable
     {
-        string CreatedBy { get; set; }
+        string? CreatedBy { get; set; }
 
-        string LastUpdatedBy { get; set; }
+        string? LastUpdatedBy { get; set; }
 
         DateTimeOffset Created { get; set; }
 

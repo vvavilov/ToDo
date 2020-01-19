@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +25,7 @@ namespace ToDo.WebApi.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<ToDoListVm>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<ToDoListVm>>> GetAll()
         {
             var lists = await _mediatr.Send(new GetToDoLists());
@@ -32,6 +34,8 @@ namespace ToDo.WebApi.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [ProducesResponseType(typeof(ToDoListVm), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ToDoListVm>> GetById(Guid id)
         {
             var item = await _mediatr.Send(new GetToDoListById
@@ -39,31 +43,23 @@ namespace ToDo.WebApi.Controllers
                 Id = id
             });
 
-            if (item == null)
-            {
-                return NotFound();
-            }
-
             return Ok(item);
         }
 
         [HttpPost]
         [ProducesResponseType(typeof(ToDoListVm), StatusCodes.Status201Created)]
-        public async Task<ActionResult<ToDoListVm>> Add(string title)
+        public async Task<ActionResult<ToDoListVm>> Add([FromBody]AddToDoList addToDoListCommand)
         {
-            var addedEntity = await _mediatr.Send(new AddToDoList { Title = title });
+            var addedEntity = await _mediatr.Send(addToDoListCommand);
             return CreatedAtAction(nameof(GetById), new { id = addedEntity.Id }, addedEntity);
         }
 
-        [HttpPatch]
-        [Route("{id}")]
-        public async Task<ActionResult<ToDoListVm>> Update(Guid id, ToDoListVm item)
+        [HttpPut]
+        [ProducesResponseType(typeof(ToDoListVm), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ToDoListVm>> Update([FromBody] UpdateToDoList updateToDoListCommand)
         {
-            var updatedItem = await _mediatr.Send(new UpdateToDoList
-            {
-                Id = id,
-                Title = item.Title
-            });
+            var updatedItem = await _mediatr.Send(updateToDoListCommand);
 
             return Ok(updatedItem);
         }
@@ -71,6 +67,7 @@ namespace ToDo.WebApi.Controllers
         [HttpDelete]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _mediatr.Send(new DeleteToDoList { Id = id });

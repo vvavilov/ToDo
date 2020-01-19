@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ToDo.Core;
 using ToDo.Infrastructure;
+using ToDo.WebApi.Extensions;
 
 namespace ToDo.WebApi
 {
@@ -43,6 +44,7 @@ namespace ToDo.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             app.UseCors(policy =>
             {
                 policy.AllowAnyOrigin();
@@ -53,6 +55,8 @@ namespace ToDo.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseExceptionHandling();
 
             app.UseHttpsRedirection();
 
@@ -65,7 +69,7 @@ namespace ToDo.WebApi
                 endpoints.MapControllers();
             });
 
-            
+
             app.UseOpenApi();
             app.UseSwaggerUi3();
         }

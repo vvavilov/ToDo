@@ -4,6 +4,7 @@ using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using ToDo.Core.Common.Extensions;
 using ToDo.Core.Common.Interfaces;
 using ToDo.Core.ViewModels;
 
@@ -13,7 +14,7 @@ namespace ToDo.Core.ToDo.Commands
     {
         public Guid Id { get; set; }
 
-        public string Title { get; set; }
+        public string Title { get; set; } = "";
     }
 
     public class UpdateToDoListValidator : AbstractValidator<UpdateToDoList>
@@ -38,7 +39,7 @@ namespace ToDo.Core.ToDo.Commands
 
         public async Task<ToDoListVm> Handle(UpdateToDoList request, CancellationToken cancellationToken)
         {
-            var entityToUpdate = _db.ToDoLists.Find(request.Id);
+            var entityToUpdate = await _db.ToDoLists.FindAsyncOrThrow(request.Id);
             entityToUpdate.Title = request.Title;
             await _db.SaveChangesAsync(cancellationToken);
             return _mapper.Map<ToDoListVm>(entityToUpdate);

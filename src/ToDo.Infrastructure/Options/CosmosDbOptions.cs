@@ -7,10 +7,10 @@ namespace ToDo.WebApi.Configuration
 {
     public class CosmosDbOptions
     {
-        public string AccountEndpoint { get; set; }
+        public string AccountEndpoint { get; set; } = "";
 
-        public string AccountKey { get; set; }
+        public string AccountKey { get; set; } = "";
 
-        public string DatabaseName { get; set; }
+        public string DatabaseName { get; set; } = "";
     }
 }
