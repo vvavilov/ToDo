@@ -16,16 +16,11 @@ namespace ToDo.Infrastructure
             services.AddTransient<IDbSeed, DbSeed>();
             services.AddTransient<ICurrentUser, CurrentUser>();
 
-            services.AddDbContext<IDbContext, TodoDbContext>(opts =>
+            services.AddDbContext<IDbContext, TodoDbContext>(options =>
             {
-                var cosmosDbConfig = new CosmosDbOptions();
-                configuration.Bind("CosmosDb", cosmosDbConfig);
-
-                opts.UseCosmos(
-                    cosmosDbConfig.AccountEndpoint,
-                    cosmosDbConfig.AccountKey,
-                    cosmosDbConfig.DatabaseName
-                );
+                var sqlServerOptions = new SqlServerOptions();
+                configuration.Bind("SqlServer", sqlServerOptions);
+                options.UseSqlServer(sqlServerOptions.ConnectionString);
             });
         }
     }

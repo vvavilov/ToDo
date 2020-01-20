@@ -7,7 +7,7 @@ namespace ToDo.WebApi.Configuration
     {
         public static void AddOptions(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<CosmosDbOptions>(configuration.GetSection("CosmosDb"));
+            services.Configure<SqlServerOptions>(configuration.GetSection("CosmosDb"));
         }
     }
 }
