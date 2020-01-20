@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.Core.ToDo.Commands;
 using ToDo.Core.ToDo.Queries;
