@@ -20,7 +20,7 @@ export class TodoListClient {
     }
 
     getAll(): Promise<ToDoListVm[]> {
-        let url_ = this.baseUrl + "/TodoList";
+        let url_ = this.baseUrl + "/api/TodoList";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ = <RequestInit>{
@@ -53,7 +53,7 @@ export class TodoListClient {
     }
 
     add(addToDoListCommand: AddToDoList): Promise<ToDoListVm> {
-        let url_ = this.baseUrl + "/TodoList";
+        let url_ = this.baseUrl + "/api/TodoList";
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(addToDoListCommand);
@@ -90,7 +90,7 @@ export class TodoListClient {
     }
 
     update(updateToDoListCommand: UpdateToDoList): Promise<ToDoListVm> {
-        let url_ = this.baseUrl + "/TodoList";
+        let url_ = this.baseUrl + "/api/TodoList";
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(updateToDoListCommand);
@@ -131,7 +131,7 @@ export class TodoListClient {
     }
 
     getById(id: string): Promise<ToDoListVm> {
-        let url_ = this.baseUrl + "/TodoList/{id}";
+        let url_ = this.baseUrl + "/api/TodoList/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
@@ -171,7 +171,7 @@ export class TodoListClient {
     }
 
     delete(id: string): Promise<void> {
-        let url_ = this.baseUrl + "/TodoList/{id}";
+        let url_ = this.baseUrl + "/api/TodoList/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id)); 

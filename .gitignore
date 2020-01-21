@@ -3,6 +3,32 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+
+
+
+to-do-frontend/build
+.env.staging
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # User-specific files
 *.rsuser
 *.suo
@@ -30,6 +56,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

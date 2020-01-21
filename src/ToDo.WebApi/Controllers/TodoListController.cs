@@ -11,7 +11,7 @@ using ToDo.Core.ViewModels;
 namespace ToDo.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TodoListController : ControllerBase
     {
         private readonly IMediator _mediatr;
