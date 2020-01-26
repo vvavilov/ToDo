@@ -4,10 +4,10 @@ import { ToDoListVm } from '../../generated/client-api/WebApiClient';
 import { Typography, Paper, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import AddIcon from '@material-ui/icons/Add';
-import { List } from '../components/list';
-import { TitleModal } from '../components/title-modal';
 import { ViewState } from '../../shared/types/view-state';
 import { Nullable } from '../../shared/types/nullable';
+import { TitleModal } from './components/TitleModal';
+import { List } from './components/List';
 
 const useStyles = makeStyles(theme => ({
     paper: {

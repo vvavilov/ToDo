@@ -33,7 +33,7 @@ namespace ToDo.WebApi.Middleware
         private async Task HandleException(HttpContext context, Exception exception)
         {
             var statusCode = StatusCodes.Status500InternalServerError;
-            var result = string.Empty;
+            string? result = null;
 
             switch (exception)
             {

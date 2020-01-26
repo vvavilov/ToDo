@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -18,7 +18,7 @@ interface TitleModalProps {
 export const TitleModal = (props: TitleModalProps) => {
 
     return (
-    <Dialog open={props.isOpen} aria-labbeledby="form-dialog-title">
+    <Dialog open={props.isOpen} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">ToDo List Title</DialogTitle>
         <DialogContent>
             <DialogContentText>

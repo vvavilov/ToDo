@@ -12,7 +12,9 @@ import {
 import { ToDo } from './pages/to-do';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, AppBar, Toolbar, IconButton, Typography, Button, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
+import { Toolbar } from './components/toolbar/Toolbar';
+import { LoginCallback } from './pages/login/LoginCallback';
 
 const useStyles = makeStyles({
   
@@ -26,23 +28,14 @@ const App: React.FC = () => {
       <CssBaseline />
 
       <Container>
+        <Router>
+          <Toolbar />         
 
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              {/* <MenuIcon /> */}
-            </IconButton>
-            <Typography variant="h6">
-              
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
-
-        <Paper>
-
-          <Router>
+          <Paper>            
             <Switch>
+              <Route path="/login-callback">
+                <LoginCallback />
+              </Route>
               <Route path="/to-do-lists">
                 <ToDo />
               </Route>
@@ -50,14 +43,11 @@ const App: React.FC = () => {
                 <div>Home</div>
               </Route>
             </Switch>
-          </Router>
+          </Paper>
 
-        </Paper>
-
-      </Container>
-
-    
-
+        </Router>
+      </Container> 
+  
     </React.Fragment>
     
   );

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { webApiClient } from '../../shared/services/web-api';
-import { ToDoListVm } from '../../generated/client-api/WebApiClient';
 import { Typography, TableContainer, Paper, TableHead, Table, TableCell, TableRow, TableBody, IconButton, Icon, Button, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Delete from '@material-ui/icons/Delete';
 import Create from '@material-ui/icons/Create';
 import AddIcon from '@material-ui/icons/Add';
+import { ToDoListVm } from '../../../generated/client-api/WebApiClient';
 
 const useStyles = makeStyles(theme => ({
     paper: {

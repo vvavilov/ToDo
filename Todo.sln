@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ToDo.txt = ToDo.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{A2CA0505-5AE1-468A-A9BE-F5442351E506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Identity", "src\identity\ToDo.Identity\ToDo.Identity.csproj", "{C8A11DDC-29B1-459A-82B2-15D93398B676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A11DDC-29B1-459A-82B2-15D93398B676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A11DDC-29B1-459A-82B2-15D93398B676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A11DDC-29B1-459A-82B2-15D93398B676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A11DDC-29B1-459A-82B2-15D93398B676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,8 @@ Global
 		{650F4A3B-DB2A-4F11-B35E-8747FFFF54E1} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
 		{F2765580-C8A6-4214-B414-46F3E1E26983} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
 		{3164CA4B-C022-49F3-B8C9-05077C6CEC0D} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
+		{A2CA0505-5AE1-468A-A9BE-F5442351E506} = {20CF0224-8A78-4B91-BED2-D4D0B676743F}
+		{C8A11DDC-29B1-459A-82B2-15D93398B676} = {A2CA0505-5AE1-468A-A9BE-F5442351E506}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92685841-E724-4E4E-AD36-C0E14F382FF1}

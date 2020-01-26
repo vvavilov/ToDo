@@ -35,10 +35,17 @@ namespace ToDo.WebApi
             });
             services.AddCore();
             services.AddInfrastructure(Configuration);
+
             services.AddOpenApiDocument();
             services.AddCors();
-
-
+            services
+                .AddAuthentication("Bearer")
+                .AddJwtBearer(opts =>
+                {
+                    opts.Authority = "http://localhost:5000";
+                    opts.RequireHttpsMetadata = false;
+                    opts.Audience = "ToDo";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +69,7 @@ namespace ToDo.WebApi
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

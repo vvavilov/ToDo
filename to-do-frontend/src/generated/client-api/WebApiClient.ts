@@ -9,12 +9,19 @@
 
 import * as moment from 'moment';
 
-export class TodoListClient {
+export class BaseClient {
+    protected async transformOptions(options: RequestInit): Promise<RequestInit> {
+        return Promise.resolve(options);
+    }
+}
+
+export class TodoListClient extends BaseClient {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
 
     constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        super();
         this.http = http ? http : <any>window;
         this.baseUrl = baseUrl ? baseUrl : "";
     }
@@ -30,7 +37,9 @@ export class TodoListClient {
             }
         };
 
-        return this.http.fetch(url_, options_).then((_response: Response) => {
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
             return this.processGetAll(_response);
         });
     }
@@ -67,7 +76,9 @@ export class TodoListClient {
             }
         };
 
-        return this.http.fetch(url_, options_).then((_response: Response) => {
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
             return this.processAdd(_response);
         });
     }
@@ -104,7 +115,9 @@ export class TodoListClient {
             }
         };
 
-        return this.http.fetch(url_, options_).then((_response: Response) => {
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
             return this.processUpdate(_response);
         });
     }
@@ -144,7 +157,9 @@ export class TodoListClient {
             }
         };
 
-        return this.http.fetch(url_, options_).then((_response: Response) => {
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
             return this.processGetById(_response);
         });
     }
@@ -183,7 +198,9 @@ export class TodoListClient {
             }
         };
 
-        return this.http.fetch(url_, options_).then((_response: Response) => {
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
             return this.processDelete(_response);
         });
     }
